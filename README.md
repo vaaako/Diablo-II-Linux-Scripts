@@ -6,6 +6,8 @@
 - `Diablo 2 Lords of Destruction.iso`
 - [`LODPatch_114d.exe`](https://www.moddb.com/games/diablo-2-lod/downloads/diablo-ii-lord-of-destruction-v114d-patch)
 
+> You can change ISO names inside `install-diablo2.sh`
+
 **Included files:**
 - [`glide3x.dll`](https://github.com/bolrog/d2dx/releases): Widescreen mod
 	+ `d2dx.cfg`: The only change from the original file is the line `nocompatmodefix=true`

@@ -15,9 +15,15 @@ sudo umount -f "${DISC_PATH}" 2>/dev/null || true # Just in case (true to not ab
 trap 'sudo umount "${DISC_PATH}" 2>/dev/null || true' EXIT
 
 
+DISC1="Diablo II Disc 1 - Install.is"
+DISC2="Diablo II Disc 2 - Play.is"
+DISC3="Diablo II Disc 3 - Cinematics.is"
+DISCEXP="Diablo 2 Lords of Destruction.is"
+
+
 echo "[+] Mounting Disc 1"
 
-sudo mount -o loop "Diablo II Disc 1 - Install.iso" "${DISC_PATH}" 2>/dev/null
+sudo mount -o loop "${DISC1}" "${DISC_PATH}" 2>/dev/null
 echo "[+] Running SETUP.EXE"
 wine_run "${DISC_PATH}/INSTALL.EXE"
 echo "> CD 1 mounted"
@@ -27,21 +33,21 @@ read -p "Press Enter when asked for the 'Play Disc'..."
 
 echo -e "\n[+] Switching to Disc 2"
 sudo umount -f "${DISC_PATH}"
-sudo mount -o loop "Diablo II Disc 2 - Play.iso" "${DISC_PATH}" 2>/dev/null
+sudo mount -o loop "${DISC2}" "${DISC_PATH}" 2>/dev/null
 echo "> CD 2 mounted"
 echo "> Click 'Ok' in the Installer"
 read -p "Press Enter when asked for the 'Cinematic Disc'..."
 
 echo -e "\n[+] Switching to Disc 3"
 sudo umount -f "${DISC_PATH}"
-sudo mount -o loop "Diablo II Disc 3 - Cinematics.iso" "${DISC_PATH}" 2>/dev/null
+sudo mount -o loop "${DISC3}" "${DISC_PATH}" 2>/dev/null
 echo "> CD 3 mounted"
 echo "> Click 'Ok' in the Installer"
 read -p "Press Enter when asked for the 'Install Disc'..."
 
 echo -e "\n[+] Switching to Disc 1"
 sudo umount -f "${DISC_PATH}"
-sudo mount -o loop "Diablo II Disc 1 - Install.iso" "${DISC_PATH}" 2>/dev/null
+sudo mount -o loop "${DISC1}" "${DISC_PATH}" 2>/dev/null
 echo "> CD 1 mounted"
 echo "> Click 'Ok' in the Installer"
 echo "> Cancel all the popups after the installation is completed"
@@ -53,21 +59,21 @@ wineserver -k
 
 echo -e "\n[+] Switching to Expansion Disc"
 sudo umount -f "${DISC_PATH}" 2>/dev/null || true # Just in case (true to not abort on 'set -e')
-sudo mount -o loop "Diablo 2 Lords of Destruction.iso" "${DISC_PATH}" 2>/dev/null
+sudo mount -o loop "${DISCEXP}" "${DISC_PATH}" 2>/dev/null
 wine_run "${DISC_PATH}/INSTALL.EXE"
 echo "> Expansion CD-KEY: 27R4-BWPZ-RCNV-FXC7"
 read -p "Press Enter when asked for the 'Play Disc'..."
 
 echo -e "\n[+] Switching to Disc 2"
 sudo umount -f "${DISC_PATH}"
-sudo mount -o loop "Diablo II Disc 2 - Play.iso" "${DISC_PATH}" 2>/dev/null
+sudo mount -o loop "${DISC2}" "${DISC_PATH}" 2>/dev/null
 echo "> CD 2 mounted"
 echo "> Click 'Ok' in the Installer"
 read -p "Press Enter when asked for 'Expansion Disc'..."
 
 echo -e "\n[+] Switching to Expansion Disc"
 sudo umount -f "${DISC_PATH}"
-sudo mount -o loop "Diablo 2 Lords of Destruction.iso" "${DISC_PATH}" 2>/dev/null
+sudo mount -o loop "${DISCEXP}" "${DISC_PATH}" 2>/dev/null
 echo "> Expansion CD mounted"
 echo "> Click 'Ok' in the Installer"
 read -p "Press Enter after you clicked 'Exit Installer'..."
