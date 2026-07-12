@@ -15,10 +15,10 @@ sudo umount -f "${DISC_PATH}" 2>/dev/null || true # Just in case (true to not ab
 trap 'sudo umount "${DISC_PATH}" 2>/dev/null || true' EXIT
 
 
-DISC1="Diablo II Disc 1 - Install.is"
-DISC2="Diablo II Disc 2 - Play.is"
-DISC3="Diablo II Disc 3 - Cinematics.is"
-DISCEXP="Diablo 2 Lords of Destruction.is"
+DISC1="Diablo II Disc 1 - Install.iso"
+DISC2="Diablo II Disc 2 - Play.iso"
+DISC3="Diablo II Disc 3 - Cinematics.iso"
+DISCEXP="Diablo 2 Lords of Destruction.iso"
 
 
 echo "[+] Mounting Disc 1"
